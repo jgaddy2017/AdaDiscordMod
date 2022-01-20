@@ -23,12 +23,11 @@ let adaId = '350061650'
 //getAdasDailyMods(destinyMembershipID, playerID, adaId);
 //getAdasDailyMods(adaId);
 //EntityDefinition('this doesnt matter');
-<<<<<<< HEAD
+
 //searchDestinyPlayer('Darkguard190', '3556');
 let authorizationCode = Oauth();
 console.log(authorizationCode);
-=======
+
 //searchDestinyPlayer('Dakiroenus');
-Oauth();
->>>>>>> main
+
 ///////ADA-1 number: 350061650
