@@ -1,0 +1,25 @@
+{
+  "name": "adadiscordmod",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jgaddy2017/AdaDiscordMod.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jgaddy2017/AdaDiscordMod/issues"
+  },
+  "homepage": "https://github.com/jgaddy2017/AdaDiscordMod#readme",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "dotenv": "^14.2.0",
+    "open": "^8.4.0",
+    "qs": "^6.10.3"
+  }
+}
