@@ -6,11 +6,11 @@ async function EntityDefinition(itemHash){
     const myAPIKey = process.env.APIKEY;
     const config = {
         method: 'GET',
-        url: 'https://www.bungie.net/platform/Destiny2/Manifest/DestinyInventoryItemDefinition/1022552290/',
+        url: `https://www.bungie.net/platform/Destiny2/Manifest/DestinyInventoryItemDefinition/${itemHash}/`,
         headers: {'X-API-KEY': myAPIKey},
     }
     let res = await axios(config);
-    console.log(res.data);
+    console.log(res.data.Response.displayProperties.name);
 }
 
 module.exports = EntityDefinition;
