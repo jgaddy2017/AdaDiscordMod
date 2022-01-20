@@ -17,11 +17,11 @@ let adaId = '350061650'
 //getInventoryItemName(itemID);
 //playerInformation(playerID);
 //vendorInformation();
-getcharacterIds(destinyMembershipID);
+//getcharacterIds(destinyMembershipID);
 //getPlayerMods(destinyMembershipID);
 //getAdasDailyMods(destinyMembershipID, playerID, adaId);
 //getAdasDailyMods();
 //EntityDefinition('this doesnt matter');
 //searchDestinyPlayer('Dakiroenus');
-//Oauth();
+Oauth();
 ///////ADA-1 number: 350061650
