@@ -1,4 +1,14 @@
 require('dotenv').config();
+const express = require('express');
+const fs = require('fs');
+const https = require('https');
+const open = require('open');
+const privateKey  = fs.readFileSync('./certs/selfsigned.key');
+const certificate = fs.readFileSync('./certs/selfsigned.crt');
+
+// Create Express app
+const app = express();
+
 
 const getInventoryItemName = require('./APICalls/GetInventoryItemName');
 const playerInformation = require('./APICalls/PlayerInformation');
@@ -26,7 +36,22 @@ let code = 'c8c0a6af790e0fe38ef9ebf82c7c8e8b';
 //EntityDefinition('this doesnt matter');
 
 //searchDestinyPlayer('Darkguard190', '3556');
-Oauth(destinyMembershipID, myCharacterId, adaId, code)
+const ClientID = process.env.CLIENT_ID;
+
+const credentials = {key: privateKey, cert: certificate};
+// A sample route
+
+app.get('/', (req, res) => {
+    if(req.query.code == undefined)
+        open(`https://www.bungie.net/en/OAuth/Authorize?client_id=${ClientID}&response_type=code`,"_self");
+    Oauth(destinyMembershipID, myCharacterId, adaId, req.query.code);
+
+    res.send('Now using https..');
+});
+
+const httpsServer = https.createServer(credentials, app);
+// Start the Express server
+httpsServer.listen(3000, () => console.log('Server running on port 3000!'));
 //searchDestinyPlayer('Dakiroenus');
 
 ///////ADA-1 number: 350061650

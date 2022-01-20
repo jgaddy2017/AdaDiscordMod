@@ -5,7 +5,7 @@ require('dotenv');
 
 const getAdasDailyMods = require('./APICalls/GetAdasDailyMods');
 
-async function OauthFunc(MembershipID, CharacterID, AdaID, Code){
+async function OauthFunc(MembershipID, CharacterID, AdaID, Code, res){
     const ClientID = process.env.CLIENT_ID;
     let data = qs.stringify({
         'client_id': ClientID,
@@ -25,9 +25,7 @@ async function OauthFunc(MembershipID, CharacterID, AdaID, Code){
         getAdasDailyMods(MembershipID, CharacterID, AdaID, authorizationCode);
         })
         .catch(function (error) {
-          console.log(error);
-          open('https://www.bungie.net/en/OAuth/Authorize?client_id=39046&response_type=code');
-          //console.log(error);
+            open(`https://www.bungie.net/en/OAuth/Authorize?client_id=${ClientID}&response_type=code`,"_self");
         });
       
       
