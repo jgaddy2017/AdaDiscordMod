@@ -10,18 +10,20 @@ const getAdasDailyMods = require('./APICalls/GetAdasDailyMods');
 const EntityDefinition = require('./APICalls/EntityDefinition');
 const Oauth = require('./Oauth');
 
-let itemID = '3875551374';
+let itemID = '2979281381';
 let playerID = '21059811'
-let destinyMembershipID = '4611686018487538894';
+let destinyMembershipID = '4611686018487538722';
+let myCharacterId = '2305843009446664091';
 let adaId = '350061650'
 //getInventoryItemName(itemID);
 //playerInformation(playerID);
 //vendorInformation();
-getcharacterIds(destinyMembershipID);
+//getcharacterIds(destinyMembershipID);
 //getPlayerMods(destinyMembershipID);
 //getAdasDailyMods(destinyMembershipID, playerID, adaId);
-//getAdasDailyMods();
+//getAdasDailyMods(adaId);
 //EntityDefinition('this doesnt matter');
-//searchDestinyPlayer('Dakiroenus');
-//Oauth();
+//searchDestinyPlayer('Darkguard190', '3556');
+let authorizationCode = Oauth();
+console.log(authorizationCode);
 ///////ADA-1 number: 350061650

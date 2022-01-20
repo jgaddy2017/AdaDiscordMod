@@ -2,13 +2,13 @@
 const axios = require('axios');
 const myAPIKey = process.env.APIKEY;
 
-async function GetAdasDailyMods(){
+async function GetAdasDailyMods(adaId){
     let itemName = ""
     const config = {
         method: 'GET',
-        url: 'https://www.bungie.net/platform/Destiny2/Vendors/',
+        url: 'https://www.bungie.net/platform/Destiny2/Vendors/' + adaId,
         headers: {'X-API-Key': myAPIKey},
-        params: {'components': 'VendorSales'}
+        params: {'components': 'Vendors'}
     }
     let res = await axios(config).catch(function(err){
         if(err.response){
@@ -17,7 +17,7 @@ async function GetAdasDailyMods(){
     });
     //itemName = res.data.Response.data.inventoryItem.itemName;
 
-    console.log(res.data.Response.sales.data['2190858386'])
+    console.log(res.data.Response)
     //console.log(res.data.Response.sales.data['2190858386']);
     //console.log(res.data.Response.stringVariables);
     //console.log(res.data.Response.vendors);
