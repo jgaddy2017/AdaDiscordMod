@@ -42,11 +42,9 @@ const credentials = {key: privateKey, cert: certificate};
 // A sample route
 
 app.get('/', (req, res) => {
-    if(req.query.code == undefined)
-        open(`https://www.bungie.net/en/OAuth/Authorize?client_id=${ClientID}&response_type=code`,"_self");
-    Oauth(destinyMembershipID, myCharacterId, adaId, req.query.code);
-
-    res.send('Now using https..');
+    //if(req.query.code == undefined)
+        //open(`https://www.bungie.net/en/OAuth/Authorize?client_id=${ClientID}&response_type=code`,"_self");
+    Oauth(destinyMembershipID, myCharacterId, adaId, req.query.code, res);
 });
 
 const httpsServer = https.createServer(credentials, app);
