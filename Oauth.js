@@ -23,12 +23,10 @@ async function OauthFunc(MembershipID, CharacterID, AdaID, Code, res){
       };
       await axios(config).then(response => {
         authorizationCode = 'Bearer ' + response.data.access_token;
-        getAdasDailyMods(MembershipID, CharacterID, AdaID, authorizationCode);
-        res.send('Now using https..');
+        getAdasDailyMods(MembershipID, CharacterID, AdaID, authorizationCode, res);
         })
         .catch(function (error) {
           res.redirect(`https://www.bungie.net/en/OAuth/Authorize?client_id=${ClientID}&response_type=code`);
-            //open(`https://www.bungie.net/en/OAuth/Authorize?client_id=${ClientID}&response_type=code`,"_self");
         });
       
       
