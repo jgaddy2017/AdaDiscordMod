@@ -5,7 +5,7 @@
 Run this in bash to create selfsigned ssl key and cert for https
 
 ```bash
-openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./cert/selfsigned.key -out ./cert/selfsigned.crt
+openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout ./certs/selfsigned.key -out ./certs/selfsigned.crt
 ```
 
 ## Install Node Packages
