@@ -16,8 +16,6 @@ const vendorInformation = require('./APICalls/VendorInformation');
 const getcharacterIds = require('./APICalls/GetCharacterIds');
 const searchDestinyPlayer = require('./APICalls/SearchDestinyPlayer');
 const getPlayerMods = require('./APICalls/GetPlayerMods');
-//const getAdasDailyMods = require('./APICalls/GetAdasDailyMods');
-//const EntityDefinition = require('./APICalls/EntityDefinition');
 const Oauth = require('./Oauth');
 
 let itemID = '2979281381';
@@ -25,7 +23,6 @@ let playerID = '21059811'
 let chrisMembershipID = '4611686018487538722';
 let chrisCharacterId = '2305843009446664091';
 let adaId = '350061650'
-let code = 'c8c0a6af790e0fe38ef9ebf82c7c8e8b';
 //getInventoryItemName(itemID);
 //playerInformation(playerID);
 //vendorInformation();
@@ -42,8 +39,6 @@ const credentials = {key: privateKey, cert: certificate};
 // A sample route
 
 app.get('/', (req, res) => {
-    //if(req.query.code == undefined)
-        //open(`https://www.bungie.net/en/OAuth/Authorize?client_id=${ClientID}&response_type=code`,"_self");
     Oauth(chrisMembershipID, chrisCharacterId, adaId, req.query.code, res);
 });
 
