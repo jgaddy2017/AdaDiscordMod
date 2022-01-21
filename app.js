@@ -22,8 +22,8 @@ const Oauth = require('./Oauth');
 
 let itemID = '2979281381';
 let playerID = '21059811'
-let destinyMembershipID = '4611686018487538722';
-let myCharacterId = '2305843009446664091';
+let chrisMembershipID = '4611686018487538722';
+let chrisCharacterId = '2305843009446664091';
 let adaId = '350061650'
 let code = 'c8c0a6af790e0fe38ef9ebf82c7c8e8b';
 //getInventoryItemName(itemID);
@@ -44,7 +44,7 @@ const credentials = {key: privateKey, cert: certificate};
 app.get('/', (req, res) => {
     //if(req.query.code == undefined)
         //open(`https://www.bungie.net/en/OAuth/Authorize?client_id=${ClientID}&response_type=code`,"_self");
-    Oauth(destinyMembershipID, myCharacterId, adaId, req.query.code, res);
+    Oauth(chrisMembershipID, chrisCharacterId, adaId, req.query.code, res);
 });
 
 const httpsServer = https.createServer(credentials, app);
