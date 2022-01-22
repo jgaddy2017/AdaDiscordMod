@@ -20,6 +20,9 @@ async function EntityDefinition(itemHash1, itemHash2, res){
     let result2 = await axios(config2);
     let mod2 = result2.data.Response.displayProperties.name;
 
+    console.log(mod1);
+    console.log(mod2);
+
     res.send(mod1 + '<br>' + mod2);
 }
 
