@@ -3,6 +3,7 @@ const express = require('express');
 const fs = require('fs');
 const https = require('https');
 const open = require('open');
+
 const privateKey  = fs.readFileSync('./certs/selfsigned.key');
 const certificate = fs.readFileSync('./certs/selfsigned.crt');
 
@@ -33,6 +34,7 @@ let adaId = '350061650'
 //EntityDefinition('this doesnt matter');
 
 //searchDestinyPlayer('Darkguard190', '3556');
+
 const ClientID = process.env.CLIENT_ID;
 
 const credentials = {key: privateKey, cert: certificate};
@@ -48,3 +50,5 @@ httpsServer.listen(3000, () => console.log('Server running on port 3000!'));
 //searchDestinyPlayer('Dakiroenus');
 
 ///////ADA-1 number: 350061650
+
+

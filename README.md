@@ -23,5 +23,10 @@ Create a file name .env at the root of your project.  Your file should look some
 ```
 APIKEY=Your API Key here
 CLIENT_ID=Your Client ID
+DISCORDJS_TOKEN=Your Discord Token
 ```
+
+## Adding DiscordBot
+
+ discord.com/api/oauth2/authorize?client_id=Your_CLIENT_ID&scope=bot
 
