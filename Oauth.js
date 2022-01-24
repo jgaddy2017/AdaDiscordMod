@@ -5,8 +5,9 @@ const express = require('express');
 require('dotenv');
 
 const getAdasDailyMods = require('./APICalls/GetAdasDailyMods');
+const getCurrentUser = require('./APICalls/GetCurrentUser');
 
-async function OauthFunc(MembershipID, CharacterID, AdaID, Code, res){
+async function OauthFunc(AdaID, Code, res){
     const ClientID = process.env.CLIENT_ID;
     const ClientSecret = process.env.CLIENT_SECRET;
     let base64Code = "Basic " + Buffer.from(ClientID+":"+ClientSecret).toString('base64');
@@ -27,8 +28,7 @@ async function OauthFunc(MembershipID, CharacterID, AdaID, Code, res){
       await axios(config).then(response => {
         let authorizationCode = 'Bearer ' + response.data.access_token;
         let refreshToken = response.data.refreshToken;
-        
-        getAdasDailyMods(MembershipID, CharacterID, AdaID, authorizationCode, res);
+        getCurrentUser(authorizationCode, AdaID, res);
       }).catch(function (error) {
           res.redirect(`https://www.bungie.net/en/OAuth/Authorize?client_id=${ClientID}&response_type=code`);
         });

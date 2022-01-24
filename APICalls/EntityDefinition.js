@@ -1,8 +1,6 @@
 const axios = require('axios');
 require('dotenv');
 async function EntityDefinition(itemHash1, itemHash2, res){
-
-
     const myAPIKey = process.env.APIKEY;
     const config = {
         method: 'GET',

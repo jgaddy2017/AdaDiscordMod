@@ -14,9 +14,10 @@ const app = express();
 const getInventoryItemName = require('./APICalls/GetInventoryItemName');
 const playerInformation = require('./APICalls/PlayerInformation');
 const vendorInformation = require('./APICalls/VendorInformation');
-const getcharacterIds = require('./APICalls/GetCharacterIds');
+//const getcharacterIds = require('./APICalls/GetCharacterIds');
 const searchDestinyPlayer = require('./APICalls/SearchDestinyPlayer');
 const getPlayerMods = require('./APICalls/GetPlayerMods');
+const getCurrentUser = require('./APICalls/GetCurrentUser');
 const Oauth = require('./Oauth');
 
 let itemID = '2979281381';
@@ -27,7 +28,7 @@ let adaId = '350061650'
 //getInventoryItemName(itemID);
 //playerInformation(playerID);
 //vendorInformation();
-//getcharacterIds(destinyMembershipID);
+//getcharacterIds(chrisMembershipID);
 //getPlayerMods(destinyMembershipID);
 //getAdasDailyMods(destinyMembershipID, playerID, adaId);
 //getAdasDailyMods(adaId);
@@ -41,7 +42,8 @@ const credentials = {key: privateKey, cert: certificate};
 // A sample route
 
 app.get('/', (req, res) => {
-    Oauth(chrisMembershipID, chrisCharacterId, adaId, req.query.code, res);
+    //earchDestinyPlayer('Darkguard190', '3556', adaId, req.query.code, res);
+    Oauth(adaId, req.query.code, res);
 });
 
 const httpsServer = https.createServer(credentials, app);
